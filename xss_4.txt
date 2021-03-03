@@ -1,0 +1,6 @@
+<svg onload =({
+var user = $( '#logged-in-user' ).text()
+alert(user)
+var last = $( 'div a.history-item:nth-child(2)' ).text()
+alert(last) })
+>
